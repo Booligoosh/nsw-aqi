@@ -5,6 +5,9 @@ import "./registerServiceWorker";
 
 Vue.config.productionTip = false;
 
+import vSelect from "vue-select";
+Vue.component("v-select", vSelect);
+
 new Vue({
   store,
   render: h => h(App)
