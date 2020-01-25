@@ -130,11 +130,7 @@ h1 {
 }
 .source {
   text-align: center;
-  position: absolute;
-  bottom: 3rem;
-  left: 0;
-  right: 0;
-  width: max-content;
+  margin-bottom: 2rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
