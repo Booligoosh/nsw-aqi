@@ -163,8 +163,6 @@ h1 {
 }
 .aqi-range {
   font-weight: 500;
-  z-index: 1;
-  cursor: pointer;
 }
 .aqi-range-explanation {
   opacity: 0.5;
