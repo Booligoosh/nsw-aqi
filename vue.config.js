@@ -23,12 +23,11 @@ module.exports = {
   //   },
   pwa: {
     name: `NSW Air Quality Index`,
-    // themeColor: `#e3e5e8`,
-    // appleMobileWebAppStatusBarStyle: "black",
+    themeColor: `#2d3f53`,
     manifestOptions: {
       start_url: `/`,
-      short_name: `NSW AQI`
-      // background_color: `#f1f2f4`
+      short_name: `NSW AQI`,
+      background_color: `#ffffff`
     },
     workboxOptions: {
       exclude: [`_redirects`, `_headers`, /\.map$/]
