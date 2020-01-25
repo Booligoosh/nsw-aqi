@@ -13,7 +13,14 @@
       />
       <div class="aqi-display">
         <!-- <div class="aqi-sub">Current Air Quality Index (AQI)</div> -->
-        <div class="aqi">{{ $store.getters.aqi }}</div>
+        <div
+          class="aqi-range"
+          :style="{ color: aqiRange.color }"
+          @click="alert(aqiRange.explanation)"
+        >
+          Air quality is {{ aqiRange.name.toLowerCase() }}
+        </div>
+        <div class="aqi">{{ aqi }}</div>
         <div class="aqi-sub">
           Last updated at {{ $store.getters.lastUpdated }}
         </div>
@@ -36,6 +43,12 @@ export default {
     this.$store.dispatch(`getAqiData`);
   },
   computed: {
+    aqi() {
+      return this.$store.getters.aqi;
+    },
+    aqiRange() {
+      return this.$store.getters.aqiRange;
+    },
     loading() {
       return this.$store.state.loadingAqiData;
     },
@@ -46,6 +59,11 @@ export default {
       set(value) {
         this.$store.commit("setSiteName", value);
       }
+    }
+  },
+  methods: {
+    alert(text) {
+      alert(text);
     }
   }
 };
@@ -128,6 +146,9 @@ h1 {
   margin: 0 auto;
   max-width: 100%;
 }
+// .vs__dropdown-menu {
+//   box-shadow: none;
+// }
 .source {
   text-align: center;
   margin-bottom: 2rem;
@@ -139,5 +160,9 @@ h1 {
   font-size: 0.8em;
   opacity: 0.3;
   font-weight: 500;
+}
+.aqi-range {
+  font-weight: 500;
+  z-index: 1;
 }
 </style>

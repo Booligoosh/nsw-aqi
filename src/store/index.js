@@ -46,6 +46,46 @@ export default new Vuex.Store({
     },
     lastUpdated(state) {
       return state.lastUpdated;
+    },
+    aqiRange(state, getters) {
+      const aqi = getters.aqi;
+      if (aqi <= 33) {
+        return {
+          name: `Very good`,
+          color: `hsl(194, 65%, 51%)`,
+          explanation: `No health impacts are expected when air quality is in this range.`
+        };
+      } else if (aqi <= 66) {
+        return {
+          name: `Good`,
+          color: `hsl(83, 38%, 56%)`,
+          explanation: `No health impacts are expected when air quality is in this range.`
+        };
+      } else if (aqi <= 99) {
+        return {
+          name: `Fair`,
+          color: `hsl(47, 100%, 61%)`,
+          explanation: `Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.`
+        };
+      } else if (aqi <= 149) {
+        return {
+          name: `Poor`,
+          color: `hsl(21, 82%, 58%)`,
+          explanation: `People with heart or lung disease should limit  exercising outdoors.`
+        };
+      } else if (aqi <= 199) {
+        return {
+          name: `Very poor`,
+          color: `hsl(338, 45%, 32%)`,
+          explanation: `People with heart or lung disease, older adults, and  children should avoid exercising outdoors. Everyone else should reduce prolonged or heavy exertion. If you have symptoms rest and use your reliever medicine. If symptoms persist, seek medical advice.`
+        };
+      } else {
+        return {
+          name: `Hazardous`,
+          color: `hsl(9, 63%, 50%)`,
+          explanation: `Everyone, especially people with heart or lung disease should avoid outdoor exertion and stay inside as much as possible. If you have symptoms rest and use your reliever medicine. If symptoms persist, seek medical advice.`
+        };
+      }
     }
   },
   actions: {
