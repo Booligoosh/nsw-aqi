@@ -32,5 +32,16 @@ module.exports = {
     workboxOptions: {
       exclude: [`_redirects`, `_headers`, /\.map$/]
     }
+  },
+  pluginOptions: {
+    sitemap: {
+      productionOnly: true,
+      baseURL: `https://aqi.ethan.link`,
+      urls: [
+        {
+          loc: `/`
+        }
+      ]
+    }
   }
 };
