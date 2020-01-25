@@ -19,6 +19,7 @@
           @click="alert(aqiRange.explanation)"
         >
           Air quality is {{ aqiRange.name.toLowerCase() }}
+          <font-awesome-icon icon="info-circle" />
         </div>
         <div class="aqi">{{ aqi }}</div>
         <div class="aqi-sub">
@@ -164,5 +165,10 @@ h1 {
 .aqi-range {
   font-weight: 500;
   z-index: 1;
+}
+.aqi-range .fa-info-circle {
+  opacity: 0.75;
+  margin-left: 0.2em;
+  // display: none;
 }
 </style>
