@@ -1,4 +1,4 @@
-# aqi
+# NSW Air Quality Index
 
 ## Project setup
 ```

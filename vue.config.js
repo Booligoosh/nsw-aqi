@@ -22,10 +22,12 @@ module.exports = {
   //     }
   //   },
   pwa: {
+    name: `NSW Air Quality Index`,
     // themeColor: `#e3e5e8`,
     // appleMobileWebAppStatusBarStyle: "black",
     manifestOptions: {
-      start_url: `/`
+      start_url: `/`,
+      short_name: `NSW AQI`
       // background_color: `#f1f2f4`
     },
     workboxOptions: {
