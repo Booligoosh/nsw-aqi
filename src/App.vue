@@ -165,6 +165,7 @@ h1 {
 .aqi-range {
   font-weight: 500;
   z-index: 1;
+  cursor: pointer;
 }
 .aqi-range .fa-info-circle {
   opacity: 0.75;
