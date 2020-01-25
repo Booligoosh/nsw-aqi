@@ -49,6 +49,10 @@ export default {
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
 }
@@ -62,7 +66,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  min-height: 100vh;
+  min-height: 100%;
 }
 #app > div {
   display: flex;
