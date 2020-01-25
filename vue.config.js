@@ -29,7 +29,7 @@ module.exports = {
       // background_color: `#f1f2f4`
     },
     workboxOptions: {
-      exclude: [`_redirects`, `_headers`]
+      exclude: [`_redirects`, `_headers`, /\.map$/]
     }
   }
 };
