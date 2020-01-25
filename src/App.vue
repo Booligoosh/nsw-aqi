@@ -11,7 +11,10 @@
         :clearable="false"
         placeholder="Choose an air quality monitoring site"
       />
-      <div class="aqi-display">
+      <div v-if="aqi === null" class="error-page">
+        {{ siteName }} air quality is unavailable at the moment.
+      </div>
+      <div v-else class="aqi-display">
         <!-- <div class="aqi-sub">Current Air Quality Index (AQI)</div> -->
         <div
           class="aqi-range"
@@ -122,13 +125,18 @@ h1 {
 .faded {
   opacity: 0.5;
 }
-.loading {
+.loading,
+.error-page {
+  display: flex;
+  flex-grow: 1;
   text-align: center;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   font-weight: 500;
   opacity: 0.8;
+}
+.loading {
   animation: loading-pulse 1s infinite alternate linear;
 }
 @keyframes loading-pulse {

@@ -104,11 +104,18 @@ export default new Vuex.Store({
       const aqiData = {};
       siteTds.forEach(siteTd => {
         const siteName = siteTd.innerHTML;
-        // console.log(siteName);
-        const siteAqiTd = siteTd.parentElement.querySelector(`td:last-child`);
+        const potentialSiteAqiTds = siteTd.parentElement.querySelectorAll(
+          `td[class^=i]:not(:empty)`
+        );
+        const siteAqiTd =
+          potentialSiteAqiTds.length > 0
+            ? potentialSiteAqiTds[potentialSiteAqiTds.length - 1]
+            : { innerText: `` };
         const siteAqi = siteAqiTd.innerText.trim();
         if (siteAqi) {
           aqiData[siteName] = Number(siteAqi);
+        } else {
+          aqiData[siteName] = null;
         }
       });
 
