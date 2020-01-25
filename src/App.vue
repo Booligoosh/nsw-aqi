@@ -112,4 +112,9 @@ h1 {
     opacity: 0.8;
   }
 }
+.v-select {
+  width: 28rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
 </style>
