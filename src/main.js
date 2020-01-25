@@ -9,9 +9,11 @@ import vSelect from "vue-select";
 Vue.component("v-select", vSelect);
 
 import VueGtag from "vue-gtag";
-Vue.use(VueGtag, {
-  config: { id: "UA-103555680-10" }
-});
+if (process.env.NODE_ENV === "production") {
+  Vue.use(VueGtag, {
+    config: { id: "UA-103555680-10" }
+  });
+}
 
 new Vue({
   store,
