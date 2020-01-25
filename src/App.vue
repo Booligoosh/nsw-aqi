@@ -20,11 +20,7 @@
           Last updated at {{ $store.getters.lastUpdated }}
         </div>
         <div class="aqi">{{ aqi }}</div>
-        <div
-          class="aqi-range"
-          :style="{ color: aqiRange.color }"
-          @click="alert(aqiRange.explanation)"
-        >
+        <div class="aqi-range" :style="{ color: aqiRange.color }">
           Air quality is {{ aqiRange.name.toLowerCase() }}
         </div>
         <p class="aqi-range-explanation">{{ aqiRange.explanation }}</p>
@@ -63,11 +59,6 @@ export default {
       set(value) {
         this.$store.commit("setSiteName", value);
       }
-    }
-  },
-  methods: {
-    alert(text) {
-      alert(text);
     }
   }
 };
