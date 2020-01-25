@@ -18,6 +18,13 @@
           Last updated at {{ $store.getters.lastUpdated }}
         </div>
       </div>
+      <a
+        class="source"
+        href="https://www.dpie.nsw.gov.au/air-quality/current-air-quality"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Source: NSW Government</a
+      >
     </div>
   </div>
 </template>
@@ -120,5 +127,21 @@ h1 {
   width: 28rem;
   margin: 0 auto;
   max-width: 100%;
+}
+.source {
+  text-align: center;
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.8em;
+  opacity: 0.3;
+  font-weight: 500;
 }
 </style>
