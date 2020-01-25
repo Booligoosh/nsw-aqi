@@ -16,18 +16,18 @@
       </div>
       <div v-else class="aqi-display">
         <!-- <div class="aqi-sub">Current Air Quality Index (AQI)</div> -->
+        <div class="aqi-sub">
+          Last updated at {{ $store.getters.lastUpdated }}
+        </div>
+        <div class="aqi">{{ aqi }}</div>
         <div
           class="aqi-range"
           :style="{ color: aqiRange.color }"
           @click="alert(aqiRange.explanation)"
         >
           Air quality is {{ aqiRange.name.toLowerCase() }}
-          <font-awesome-icon icon="info-circle" />
         </div>
-        <div class="aqi">{{ aqi }}</div>
-        <div class="aqi-sub">
-          Last updated at {{ $store.getters.lastUpdated }}
-        </div>
+        <p class="aqi-range-explanation">{{ aqiRange.explanation }}</p>
       </div>
       <a
         class="source"
@@ -175,9 +175,11 @@ h1 {
   z-index: 1;
   cursor: pointer;
 }
-.aqi-range .fa-info-circle {
-  opacity: 0.75;
-  margin-left: 0.2em;
-  // display: none;
+.aqi-range-explanation {
+  opacity: 0.5;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 0.9em;
+  max-width: 13rem;
 }
 </style>
